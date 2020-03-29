@@ -3,7 +3,7 @@ import React from 'react';
 const wrongPage = (props) => {
   return(
     <div>
-      <h3>Wrong page. lets go back</h3>
+      <h3>Page Not found!</h3>
     </div>
   );
 }
