@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import {ProductConsumer} from '../../../context';
 
@@ -37,6 +38,18 @@ const product = (props) => {
   );
 }
 
+// checking the data validity
+product.propTypes = {
+  product:PropTypes.shape({
+    id:PropTypes.number,
+    img:PropTypes.string,
+    title:PropTypes.string,
+    price:PropTypes.number,
+    inCart:PropTypes.bool
+  }).isRequired
+}
+
+// styling the com
 const ProductWrapper = styled.div`
   .card{
     border-color:transparent;
