@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 
 import {storeProducts,detailProduct} from './data';
+//import product from './components/ProductList/Product/Product';
 
 const ProductContext = React.createContext();
 //There are two components in context object: Provider and Consumer
@@ -8,7 +9,10 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
   state = {
     products: [],
-    detailProduct: detailProduct
+    detailProduct: detailProduct,
+    cart:[],
+    modalOpen: true,
+    modalProduct: detailProduct
   }
   componentDidMount(){
     this.setProduct();
@@ -25,12 +29,34 @@ class ProductProvider extends Component {
     })
   }
 
-  handleDetail () {
-    console.log('handleDetail');
+  getItem = (id) => {
+    const getProduct = this.state.products.find(item => item.id === id);
+    return getProduct;
   }
 
-  addToCart(){
-    console.log('adding to the cart');
+  handleDetail = (id) => {
+    const handleProduct = this.getItem(id);
+    this.setState(()=>{
+      return {
+        detailProduct:handleProduct
+      }
+    })
+  }
+
+  addToCart=(id)=>{
+    let tempProduct = [...this.state.products];
+    const index = tempProduct.indexOf(this.getItem(id));
+    const addProduct = tempProduct[index];
+    addProduct.inCart = true;
+    addProduct.count = 1;
+    const price = addProduct.price;
+    addProduct.total = price;
+    this.setState(()=>{
+      return {
+        products: tempProduct,
+        cart:[...this.state.cart, addProduct]
+      };
+    }, ()=>{console.log(this.state)})
   }
 
   render() {
