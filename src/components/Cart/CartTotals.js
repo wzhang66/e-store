@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import PaypalButton from './PaypalButton';
+
 const cartTotal = (props) => {
     const{cartSubTotal,cartTax,cartTotal,clearCart} = props.value;
     return (
@@ -34,8 +36,8 @@ const cartTotal = (props) => {
                             </span>
                             <strong>$ {cartTotal}</strong>
                         </h5>
+                        <PaypalButton total={cartTotal} clearCart={clearCart}/>
                     </div>
-
                 </div>
             </div>
         </React.Fragment>
