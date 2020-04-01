@@ -1,11 +1,36 @@
 import React,{Component} from 'react';
 
+import Title from '../Title/Title';
+import CartColumns from './CartColumns/CartColumns';
+import {ProductConsumer} from '../../context';
+import CartList from './CartList/CartList';
+import CartTotals from './CartTotals';
+
+
 class Cart extends Component {
   render() {
+    // 
     return(
-      <div>
-        <h3>Your Cart is Empty!</h3>
-      </div>
+      <section>
+        <ProductConsumer>
+          {value =>{
+            const {cart} = value;
+            let cartContent = <Title name="your cart is empty" />;
+            if(cart.length>0){
+              cartContent = (
+                <React.Fragment>
+                  <Title name="your" title="cart" />
+                  <CartColumns />
+                  <CartList value={value}/>
+                  <CartTotals value={value}/>
+                </React.Fragment>
+              );
+            }
+            return cartContent;
+          }}
+        </ProductConsumer>
+        
+      </section>
     )
   }
 }
