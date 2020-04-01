@@ -5,10 +5,11 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar/Navbar';
 import ProductList from './components/ProductList/ProductList';
-import Detail from './components/ProductList/Product/Detail/Detail';
+import Detail from './components/Detail/Detail';
 import Cart from './components/Cart/Cart';
 import WrongPage from './components/WrongPage/WrongPage';
 import Home from './components/Home/Home';
+import Modal from './components/Modal/Modal';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/cart" component = {Cart} />
         <Route component = {WrongPage}/>
       </Switch>
+      <Modal />
     </React.Fragment>
   );
 }

@@ -4,7 +4,7 @@ class Cart extends Component {
   render() {
     return(
       <div>
-        <h3>Hello from Cart</h3>
+        <h3>Your Cart is Empty!</h3>
       </div>
     )
   }
