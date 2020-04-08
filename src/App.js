@@ -9,6 +9,7 @@ import Detail from './components/Detail/Detail';
 import Cart from './components/Cart/Cart';
 import WrongPage from './components/WrongPage/WrongPage';
 import Home from './components/Home/Home';
+import About from './components/About/About';
 import Modal from './components/Modal/Modal';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/show" exact component = {ProductList} />
         <Route path="/detail" exact component = {Detail} />
         <Route path="/cart" component = {Cart} />
+        <Route path="/about" component = {About} />
         <Route component = {WrongPage}/>
       </Switch>
       <Modal />

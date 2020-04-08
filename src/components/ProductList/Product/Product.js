@@ -16,7 +16,7 @@ const product = (props) => {
               onClick={()=>value.handleDetail(id)}>
               <Link to="/detail">
                 <img 
-                  src={img} alt="product" className="card-img-top" />
+                  src={img} alt="product" className="card-img-top img-responsive" />
               </Link>
               <button
                 className="cart-btn"

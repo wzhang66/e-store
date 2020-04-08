@@ -1,0 +1,9 @@
+.Container{
+    margin: 2rem 2rem 2rem 2rem;
+    background: #ffffff;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center
+}

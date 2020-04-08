@@ -9,12 +9,19 @@ const navbar = (props) => {
   return(
     <NavWrapper className = "navbar navbar-expand-sm navbar-dark bg-primary px-sm-5">
       <Link to="/">
-        <img src={logo} alt="store" className="navbar-brand"/>
+        <img src={logo} alt="store" className="navbar-brand img-fluid"/>
       </Link>
       <ul className="navbar-nav align-items-center">
         <li className="nav-item ml-5">
           <Link to="/show" className="nav-link">
-            Products
+            Store
+          </Link>
+        </li>
+      </ul>
+      <ul className="navbar-nav align-items-center">
+        <li className="nav-item ml-5">
+          <Link to="/about" className="nav-link">
+            About
           </Link>
         </li>
       </ul>
@@ -31,7 +38,8 @@ const navbar = (props) => {
 }
 
 const NavWrapper = styled.nav`
-  background-color:var(--mainBlue) !important;;
+  background-color:var(--mainBlue) !important;
+  margin-top: 1rem;
   .nav-link{
     color:var(--mainWhite) !important;
     font-size:1.3rem;
