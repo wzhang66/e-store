@@ -16,7 +16,7 @@ const product = (props) => {
               onClick={()=>value.handleDetail(id)}>
               <Link to="/detail">
                 <img 
-                  src={img} alt="product" className="card-img-top img-responsive" />
+                  src={img} alt="product" className="card-img-top" />
               </Link>
               <button
                 className="cart-btn"
@@ -84,6 +84,7 @@ const ProductWrapper = styled.div`
     overflow:hidden;
   }
   .card-img-top{
+    height:100%;
     transition: all 0.5s linear;
   }
   .img-container:hover .card-img-top{

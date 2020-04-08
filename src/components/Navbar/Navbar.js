@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import {ButtonContainer} from '../UI/Button/Button';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 
 const navbar = (props) => {
   return(
     <NavWrapper className = "navbar navbar-expand-sm navbar-dark bg-primary px-sm-5">
       <Link to="/">
-        <img src={logo} alt="store" className="navbar-brand img-fluid"/>
+        <img src={logo} alt="store" className="navbar-brand"/>
       </Link>
       <ul className="navbar-nav align-items-center">
         <li className="nav-item ml-5">
